@@ -3,7 +3,8 @@ const Web3 = require('web3');
 const wallet = require('./l666.json'),
     abi = require('./abi/candidateConstract.json'),
     encodeParams = require('./lib/encodeParams'),
-    keyManager = require('key-manager');
+    keyManager = require('key-manager'),
+    Tx=require('ethereumjs-tx');
 
 const rlp = require('rlp');
 
@@ -78,6 +79,8 @@ function sendRawTransaction() {
 
     const nonce = web3.eth.getTransactionCount(account)
 
+
+
     // const contractData = myContractInstance.transfer.getData(param_from, param_to, param_assert)
     //nonce：sendTransaction可以不传，sendRowTransaction必须传
     const params = {
@@ -87,14 +90,24 @@ function sendRawTransaction() {
         to: myContractInstance.address,
         value: "0x0",
         data: platOnData,
+        nonce
     }
     console.log(`sendRawTransaction params:\n`, JSON.stringify(params))
 
-    const hash = web3.eth.sendRawTransaction(params)
-    console.log(`sendRawTransaction hash:`, hash);
-    getTransactionReceipt(hash, (code, data) => {
-        console.log(code, data)
-    })
+    const privateKey = keyManager.recover('aa123456', wallet);
+    console.log(privateKey);
+    let tx=new Tx(params)
+    tx.sign(privateKey)
+
+    let serializeTx= tx.serialize()
+    const hash = web3.eth.sendRawTransaction ('0x'+serializeTx.toString('hex'));
+    console.log (`sendRawTransaction hash:`, hash);
+    getTransactionReceipt (hash, (code, data) => {
+    console.log (code, data);
+    });
+
+
+
 }
 
 function getTransactionReceipt(hash, fn) {
