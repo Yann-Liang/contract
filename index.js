@@ -36,6 +36,7 @@ const result = web3.eth.call({
 });
 
 console.log('platONCall result:', result);
+myContractInstance.decodePlatONCall (result);
 
 
 
@@ -95,9 +96,10 @@ function sendRawTransaction() {
     console.log(`sendRawTransaction params:\n`, JSON.stringify(params))
 
     const privateKey = keyManager.recover('aa123456', wallet);
-    console.log(privateKey);
+    console.log(privateKey)
+    const key=new Buffer(privateKey,'hex')
     let tx=new Tx(params)
-    tx.sign(privateKey)
+    tx.sign(key)
 
     let serializeTx= tx.serialize()
     const hash = web3.eth.sendRawTransaction ('0x'+serializeTx.toString('hex'));
@@ -110,6 +112,7 @@ function sendRawTransaction() {
 
 }
 
+let wrapCount = 60;
 function getTransactionReceipt(hash, fn) {
     console.log('getTransactionReceipt hash==>', hash);
     let id = '',
@@ -140,4 +143,5 @@ function getTransactionReceipt(hash, fn) {
 }
 
 sendRawTransaction()
+
 console.log('end')
