@@ -1,0 +1,58 @@
+[
+	{
+			"name": "CandidateDeposit",
+			"inputs": [
+				{
+					"name": "nodeId",
+					"type": "strig"
+				},
+				{
+					"name": "owner",
+					"type": "strig"
+				},
+				{
+					"name": "fee",
+					"type": "uint64"
+				},
+				{
+					"name": "host",
+					"type": "string"
+				},
+				{
+					"name": "port",
+					"type": "string"
+				},
+				{
+					"name": "extra",
+					"type": "string"
+				}
+				
+			],
+			"outputs": [
+				{
+					"name": "",
+					"type": "string"
+				}
+			],
+			"constant": "true",
+			"type": "function"
+	},
+	{
+			"name": "CandidateDetails",
+			"inputs": [
+				{
+					"name": "nodeId",
+					"type": "strig"
+				}
+				
+			],
+			"outputs": [
+				{
+					"name": "",
+					"type": "string"
+				}
+			],
+			"constant": "true",
+			"type": "function"
+	}
+]
