@@ -25,7 +25,7 @@ const myContractInstance = calcContract.at(
 const nodeId = 'e152be5f5f0167250592a12a197ab19b215c5295d5eb0bb1133673dc8607530db1bfa5415b2ec5e94113f2fce0c4a60e697d5d703a29609b197b836b020446c7',
     data1 = myContractInstance.CandidateDetails.getPlatONData(nodeId),
     data =
-        '0x' + encodeParams(4, ['string', 'string'], ['CandidateDetails', nodeId]);
+        '0x' + encodeParams(4, ['string', 'hex'], ['CandidateDetails', nodeId]);
 
 // const data2 = '0xf89d8800000000000000049043616e64696461746544657461696c73b8816531353262e152be5f5f0167250592a12a197ab19b215c5295d5eb0bb1133673dc8607530db1bfa5415b2ec5e94113f2fce0c4a60e697d5d703a29609b197b836b020446c7'
 
