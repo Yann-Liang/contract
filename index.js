@@ -2,9 +2,9 @@ const Web3 = require('web3');
 
 const wallet = require('./l666.json'),
     abi = require('./abi/candidateConstract.json'),
-    encodeParams = require('./lib/encodeParams'),
-    keyManager = require('key-manager'),
-    Tx=require('ethereumjs-tx');
+    encodeParams = require('./lib/encodeParams')
+    // keyManager = require('key-manager'),
+    // Tx=require('ethereumjs-tx');
 
 const rlp = require('rlp');
 
@@ -22,21 +22,21 @@ const myContractInstance = calcContract.at(
     `0x1000000000000000000000000000000000000001`
 );
 
-const nodeId = 'e152be5f5f0167250592a12a197ab19b215c5295d5eb0bb1133673dc8607530db1bfa5415b2ec5e94113f2fce0c4a60e697d5d703a29609b197b836b020446c7',
+const nodeId = '0x'+'e152be5f5f0167250592a12a197ab19b215c5295d5eb0bb1133673dc8607530db1bfa5415b2ec5e94113f2fce0c4a60e697d5d703a29609b197b836b020446c7',
     data1 = myContractInstance.CandidateDetails.getPlatONData(nodeId),
     data =
-        '0x' + encodeParams(4, ['string', 'hex'], ['CandidateDetails', nodeId]);
+        '0x' + encodeParams(4, ['string', 'string'], ['CandidateDetails', nodeId]);
 
 // const data2 = '0xf89d8800000000000000049043616e64696461746544657461696c73b8816531353262e152be5f5f0167250592a12a197ab19b215c5295d5eb0bb1133673dc8607530db1bfa5415b2ec5e94113f2fce0c4a60e697d5d703a29609b197b836b020446c7'
 
-const result = web3.eth.call({
-    from: wallet.address,
-    to: myContractInstance.address,
-    data: data,
-});
+// const result = web3.eth.call({
+//     from: wallet.address,
+//     to: myContractInstance.address,
+//     data: data,
+// });
 
-console.log('platONCall result:', result);
-myContractInstance.decodePlatONCall (result);
+// console.log('platONCall result:', result);
+// myContractInstance.decodePlatONCall (result);
 
 
 
@@ -142,6 +142,6 @@ function getTransactionReceipt(hash, fn) {
     }
 }
 
-sendRawTransaction()
+// sendRawTransaction()
 
 console.log('end')
