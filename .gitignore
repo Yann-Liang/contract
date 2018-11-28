@@ -9,4 +9,4 @@ thumbs.db
 !.gitkeep
 .project
 .idea/*
-.vs/*
+.vscode/*

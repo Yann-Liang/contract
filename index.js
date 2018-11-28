@@ -2,9 +2,9 @@ const Web3 = require('web3');
 
 const wallet = require('./l666.json'),
     abi = require('./abi/candidateConstract.json'),
-    encodeParams = require('./lib/encodeParams')
-    // keyManager = require('key-manager'),
-    // Tx=require('ethereumjs-tx');
+    encodeParams = require('./lib/encodeParams'),
+    getTransactionReceipt = require('./lib/getTransactionReceipt')
+
 
 const rlp = require('rlp');
 
@@ -22,30 +22,22 @@ const myContractInstance = calcContract.at(
     `0x1000000000000000000000000000000000000001`
 );
 
-const nodeId = '0x'+'e152be5f5f0167250592a12a197ab19b215c5295d5eb0bb1133673dc8607530db1bfa5415b2ec5e94113f2fce0c4a60e697d5d703a29609b197b836b020446c7',
-    data1 = myContractInstance.CandidateDetails.getPlatONData(nodeId),
-    data =
-        '0x' + encodeParams(4, ['string', 'string'], ['CandidateDetails', nodeId]);
-
-// const data2 = '0xf89d8800000000000000049043616e64696461746544657461696c73b8816531353262e152be5f5f0167250592a12a197ab19b215c5295d5eb0bb1133673dc8607530db1bfa5415b2ec5e94113f2fce0c4a60e697d5d703a29609b197b836b020446c7'
-
-// const result = web3.eth.call({
-//     from: wallet.address,
-//     to: myContractInstance.address,
-//     data: data,
-// });
-
-// console.log('platONCall result:', result);
-// myContractInstance.decodePlatONCall (result);
+function call() {
+    const nodeId = '0x' + 'e152be5f5f0167250592a12a197ab19b215c5295d5eb0bb1133673dc8607530db1bfa5415b2ec5e94113f2fce0c4a60e697d5d703a29609b197b836b020446c7',
+        data1 = myContractInstance.CandidateDetails.getPlatONData(nodeId),
+        data =
+            '0x' + encodeParams(4, ['string', 'string'], ['CandidateDetails', nodeId]);
 
 
+    const result = web3.eth.call({
+        from: wallet.address,
+        to: myContractInstance.address,
+        data: data,
+    });
 
-// data =
-//         '0x' + encodeParams(4, ['string', 'hex'], ['CandidateDetails', nodeId]);
-
-// console.log('data', data)
-
-// const decode = rlp.decode(data)
+    console.log('platONCall result:', result);
+    myContractInstance.decodePlatONCall(result);
+}
 
 function sendTransaction() {
     const account = web3.eth.accounts[0]
@@ -74,13 +66,14 @@ function sendTransaction() {
 }
 
 function sendRawTransaction() {
+    const keyManager = require('key-manager'),
+        Tx = require('ethereumjs-tx');
+
     console.log(`--sendRawTransaction start--`)
-    const account=wallet.address
+    const account = wallet.address
     const platOnData = data
 
     const nonce = web3.eth.getTransactionCount(account)
-
-
 
     // const contractData = myContractInstance.transfer.getData(param_from, param_to, param_assert)
     //nonce：sendTransaction可以不传，sendRowTransaction必须传
@@ -97,49 +90,19 @@ function sendRawTransaction() {
 
     const privateKey = keyManager.recover('aa123456', wallet);
     console.log(privateKey)
-    const key=new Buffer(privateKey,'hex')
-    let tx=new Tx(params)
+    const key = new Buffer(privateKey, 'hex')
+    let tx = new Tx(params)
     tx.sign(key)
 
-    let serializeTx= tx.serialize()
-    const hash = web3.eth.sendRawTransaction ('0x'+serializeTx.toString('hex'));
-    console.log (`sendRawTransaction hash:`, hash);
-    getTransactionReceipt (hash, (code, data) => {
-    console.log (code, data);
+    let serializeTx = tx.serialize()
+    const hash = web3.eth.sendRawTransaction('0x' + serializeTx.toString('hex'));
+    console.log(`sendRawTransaction hash:`, hash);
+    getTransactionReceipt(hash, (code, data) => {
+        console.log(code, data);
     });
 
 
 
-}
-
-let wrapCount = 60;
-function getTransactionReceipt(hash, fn) {
-    console.log('getTransactionReceipt hash==>', hash);
-    let id = '',
-        result = web3.eth.getTransactionReceipt(hash),
-        data = {};
-    console.log(`result:`, result)
-    if (result && result.transactionHash && hash == result.transactionHash) {
-        clearTimeout(id);
-        if (result.logs.length != 0) {
-            console.log('sendRawTrasaction result==>', data);
-            fn(0, result);
-            delete fn;
-        } else {
-            fn(1001, '合约异常，失败');
-        }
-    } else {
-        if (wrapCount--) {
-            id = setTimeout(() => {
-                getTransactionReceipt(hash, fn);
-            }, 1000);
-        } else {
-            fn(1000, '超时');
-            console.warn('sendRawTrasaction超时');
-            id = '';
-            delete fn;
-        }
-    }
 }
 
 // sendRawTransaction()
