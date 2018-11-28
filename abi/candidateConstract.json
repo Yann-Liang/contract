@@ -4,11 +4,11 @@
 			"inputs": [
 				{
 					"name": "nodeId",
-					"type": "strig"
+					"type": "string"
 				},
 				{
 					"name": "owner",
-					"type": "strig"
+					"type": "string"
 				},
 				{
 					"name": "fee",
@@ -26,7 +26,84 @@
 					"name": "extra",
 					"type": "string"
 				}
-
+				
+			],
+			"outputs": [
+				{
+					"name": "",
+					"type": "string"
+				}
+			],
+			"constant": "false",
+			"type": "function"
+	},
+	{
+			"name": "CandidateApplyWithdraw",
+			"inputs": [
+				{
+					"name": "nodeId",
+					"type": "string"
+				},
+				{
+					"name": "withdraw",
+					"type": "uint256"
+				}
+				
+			],
+			"outputs": [
+				{
+					"name": "",
+					"type": "string"
+				}
+			],
+			"constant": "false",
+			"type": "function"
+	},
+	{
+			"name": "CandidateWithdraw",
+			"inputs": [
+				{
+					"name": "nodeId",
+					"type": "string"
+				}
+			],
+			"outputs": [
+				{
+					"name": "",
+					"type": "string"
+				}
+			],
+			"constant": "false",
+			"type": "function"
+	},
+	{
+			"name": "SetCandidateExtra",
+			"inputs": [
+				{
+					"name": "nodeId",
+					"type": "string"
+				},
+				{
+					"name": "extra",
+					"type": "string"
+				}
+			],
+			"outputs": [
+				{
+					"name": "",
+					"type": "string"
+				}
+			],
+			"constant": "false",
+			"type": "function"
+	},
+	{
+			"name": "CandidateWithdrawInfos",
+			"inputs": [
+				{
+					"name": "nodeId",
+					"type": "string"
+				}
 			],
 			"outputs": [
 				{
@@ -42,9 +119,9 @@
 			"inputs": [
 				{
 					"name": "nodeId",
-					"type": "strig"
+					"type": "string"
 				}
-
+				
 			],
 			"outputs": [
 				{
@@ -52,11 +129,62 @@
 					"type": "string"
 				}
 			],
-			"constant": "false",
+			"constant": "true",
 			"type": "function"
 	},
 	{
-        "name": "CandidateDetails_event",
+			"name": "CandidateList",
+			"inputs": [],
+			"outputs": [
+				{
+					"name": "",
+					"type": "string"
+				}
+			],
+			"constant": "true",
+			"type": "function"
+	},
+	{
+			"name": "VerifiersList",
+			"inputs": [],
+			"outputs": [
+				{
+					"name": "",
+					"type": "string"
+				}
+			],
+			"constant": "true",
+			"type": "function"
+	},
+	{
+        "name": "CandidateDepositEvent",
+        "inputs": [
+            {
+                "type": "string"
+            }
+        ],
+        "type": "event"
+    },
+	{
+        "name": "CandidateApplyWithdrawEvent",
+        "inputs": [
+            {
+                "type": "string"
+            }
+        ],
+        "type": "event"
+    },
+	{
+        "name": "CandidateWithdrawEvent",
+        "inputs": [
+            {
+                "type": "string"
+            }
+        ],
+        "type": "event"
+    },
+	{
+        "name": "SetCandidateExtraEvent",
         "inputs": [
             {
                 "type": "string"
