@@ -1,4 +1,5 @@
-const Web3 = require('web3');
+const Web3 = require('web3'),
+    config=require('./config/config.json');
 
 const wallet = require('./l666.json'),
     abi = require('./abi/candidateConstract.json'),
@@ -8,8 +9,7 @@ const wallet = require('./l666.json'),
 
 const rlp = require('rlp');
 
-const provider = 'http://10.10.8.242:8545';
-const web3 = new Web3(new Web3.providers.HttpProvider(provider));
+const web3 = new Web3(new Web3.providers.HttpProvider(config.provider));
 console.log(web3);
 
 const balance = web3.eth.getBalance(wallet.address).toNumber();
