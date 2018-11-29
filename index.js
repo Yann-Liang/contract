@@ -6,9 +6,6 @@ const wallet = require('./l666.json'),
     encodeParams = require('./lib/encodeParams'),
     getTransactionReceipt = require('./lib/getTransactionReceipt')
 
-
-const rlp = require('rlp');
-
 const web3 = new Web3(new Web3.providers.HttpProvider(config.provider));
 console.log(web3);
 
