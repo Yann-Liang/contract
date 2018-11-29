@@ -15,9 +15,7 @@ console.log('balance:', balance);
 
 const calcContract = web3.eth.contract(abi);
 
-const myContractInstance = calcContract.at(
-    `0x1000000000000000000000000000000000000001`
-);
+const myContractInstance = calcContract.at(config.address.candidate);
 
 function call() {
     const nodeId = '0x' + 'e152be5f5f0167250592a12a197ab19b215c5295d5eb0bb1133673dc8607530db1bfa5415b2ec5e94113f2fce0c4a60e697d5d703a29609b197b836b020446c7',
