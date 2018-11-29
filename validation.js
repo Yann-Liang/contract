@@ -12,18 +12,12 @@ const wallet = require('./l666.json'),
     password = 'aa123456'
 
 const web3 = new Web3(new Web3.providers.HttpProvider(config.provider));
-console.log(web3);
-
 const balance = web3.eth.getBalance(wallet.address).toNumber();
 
 console.log('balance:', balance);
 
-const calcContract = web3.eth.contract(abi);
-
-const myContractInstance = calcContract.at(config.address.candidate);
-
-
-
+const calcContract = web3.eth.contract(abi),
+    myContractInstance = calcContract.at(config.address.candidate);
 
 getCandidateList()
 
