@@ -1,6 +1,6 @@
 const { getCandidateList, candidateDeposit} = require ('./lib/validation');
 
 
-getCandidateList ();
+const result = getCandidateList();
 
 candidateDeposit()
