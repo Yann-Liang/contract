@@ -77,10 +77,27 @@ function getCandidateList() {
     });
 
     myContractInstance.decodePlatONCall (result);
-    console.log ('platONCall result:', result);
+    console.log('getCandidateList result:', result);
 
 }
 
+/**
+ * @description 获取参与当前共识的验证人列表
+ * @author liangyanxiang
+ * @date 2018-11-30
+ */
+function verifiersList() {
+    const data = myContractInstance.VerifiersList.getPlatONData()
+
+    const result = web3.eth.call({
+        from: wallet.address,
+        to: myContractInstance.address,
+        data: data,
+    });
+
+    myContractInstance.decodePlatONCall(result);
+    console.log('verifiersList result:', result);
+}
 
 
 /**
