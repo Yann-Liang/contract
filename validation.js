@@ -13,6 +13,6 @@ candidateWithdrawInfos()
 
 setCandidateExtra()
 
-candidateApplyWithdraw()
+// candidateApplyWithdraw()
 
 candidateWithdraw()
