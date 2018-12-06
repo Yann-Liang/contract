@@ -11,8 +11,12 @@ verifiersList()
 
 candidateWithdrawInfos()
 
-setCandidateExtra()
+setTimeout(() => {
+    setCandidateExtra()
 
-// candidateApplyWithdraw()
+    candidateApplyWithdraw()
 
-candidateWithdraw()
+    //  setTimeout(() => {
+    //     candidateWithdraw ();
+    // },4000)
+},4000)
