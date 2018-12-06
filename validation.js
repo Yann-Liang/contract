@@ -16,7 +16,9 @@ setTimeout(() => {
 
     candidateApplyWithdraw()
 
-    //  setTimeout(() => {
-    //     candidateWithdraw ();
-    // },4000)
-},4000)
+
+}, 3500)
+
+setTimeout(() => {
+    candidateWithdraw();
+}, 5000)
