@@ -7,9 +7,10 @@
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "dependencies": {
+        "crypto-js": "^3.1.9-1",
         "ethereumjs-tx": "^1.3.7",
-        "key-manager": "git+ssh://http://luchenqun:fendoubuxi@192.168.9.66/Juzix-ethereum/key-manager.git#develop",
-        "web3": "git+ssh://http://liangyanxiang:12345678@192.168.9.66/Juzix-Platon/web3j-js.git#develop"
+        "keythereum": "^1.0.4",
+        "web3": "git+ssh://git@192.168.9.66:PlatON/client-sdk-js.git#0.3.0_dev"
     },
     "keywords": [
         "contract",
