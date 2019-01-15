@@ -1,9 +1,9 @@
 {
-    "provider": "http://192.168.9.76:6791",
+    "provider": "http://192.168.9.76:8794",
     "address": {
         "candidate": "0x1000000000000000000000000000000000000001"
     },
-    "nodeId": "0xa363d1243646b6eabf1d4851f646b523f5707d053caab95022f1682605aca0537ee0c5c14b4dfa76dcbce264b7e68d59de79a42b7cda059e9d358336a9ab8d80",
+    "nodeId": "eebeaa496d954f8ee864e6460719755398f1e5b36e7a0c911f527fe3247b02a0a4db17aa59c5235e923602df1aeb26042149b8d2fd71cf990046b08d3b323b9a",
     "host": "0.0.0.0",
-    "port": "30303"
+    "port": "38794"
 }
