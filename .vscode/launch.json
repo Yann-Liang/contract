@@ -7,21 +7,14 @@
         {
             "type": "node",
             "request": "launch",
-            "name": "validation",
+            "name": "candidateConstract",
             "program": "${workspaceFolder}/validation.js"
-        },
-        {
-            "type": "chrome",
-            "request": "launch",
-            "name": "Launch Chrome",
-            "url": "http://localhost:8083/index.html",
-            "webRoot": "${workspaceFolder}"
         },
         {
             "type": "node",
             "request": "launch",
-            "name": "启动程序",
-            "program": "${workspaceFolder}/index.js"
-        }
+            "name": "ticketContract",
+            "program": "${workspaceFolder}/ticketContract.js"
+        },
     ]
 }
