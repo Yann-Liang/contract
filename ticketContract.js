@@ -7,10 +7,10 @@ const { voteTicket,
     getPoolRemainder,
     getTicketPrice } = require('./lib/ticketContract');
 
-getTicketPrice()
-voteTicket()
-getTicketDetail()
-getBatchTicketDetail()
+// getTicketPrice()
+// voteTicket()
+// getTicketDetail()
+// getBatchTicketDetail()
 getCandidateTicketIds()
 getBatchCandidateTicketIds()
 getCandidateEpoch()
