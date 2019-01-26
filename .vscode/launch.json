@@ -8,7 +8,7 @@
             "type": "node",
             "request": "launch",
             "name": "candidateConstract",
-            "program": "${workspaceFolder}/validation.js"
+            "program": "${workspaceFolder}/candidateConstract.js"
         },
         {
             "type": "node",
