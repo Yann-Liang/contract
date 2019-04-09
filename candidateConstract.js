@@ -1,24 +1,24 @@
-const { getCandidateList, candidateDetails, candidateDeposit, verifiersList, candidateWithdrawInfos, setCandidateExtra, candidateApplyWithdraw, candidateWithdraw} = require ('./lib/validation.1');
+const { getCandidateList, candidateDetails, candidateDeposit, verifiersList, candidateWithdrawInfos, setCandidateExtra, candidateApplyWithdraw, candidateWithdraw} = require ('./lib/candidateConstract');
 
 
-const result = getCandidateList();
+// const result = getCandidateList();
 
-candidateDeposit()
+// candidateDeposit()
 
-candidateDetails()
+// candidateDetails()
 
-verifiersList()
+// verifiersList()
 
-candidateWithdrawInfos()
+// candidateWithdrawInfos()
 
-setTimeout(() => {
-    setCandidateExtra()
+// setTimeout(() => {
+//     setCandidateExtra()
 
     candidateApplyWithdraw()
 
 
-}, 3500)
+// }, 3500)
 
-setTimeout(() => {
-    candidateWithdraw();
-}, 5000)
+// setTimeout(() => {
+//     candidateWithdraw();
+// }, 5000)
