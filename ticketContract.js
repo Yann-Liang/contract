@@ -5,13 +5,15 @@ const { voteTicket,
     getBatchCandidateTicketIds,
     getCandidateEpoch,
     getPoolRemainder,
-    getTicketPrice } = require('./lib/ticketContract');
+    getTicketPrice,
+    GetCandidateTicketCount} = require('./lib/ticketContract');
 
-// getTicketPrice()
+getTicketPrice()
+// GetCandidateTicketCount()
 // voteTicket()
 // getTicketDetail()
 // getBatchTicketDetail()
-getCandidateTicketIds()
-getBatchCandidateTicketIds()
-getCandidateEpoch()
-getPoolRemainder()
+// getCandidateTicketIds()
+// getBatchCandidateTicketIds()
+// getCandidateEpoch()
+// getPoolRemainder()
