@@ -1,20 +1,18 @@
-const { getCandidateList, candidateDetails, candidateDeposit, verifiersList, candidateWithdrawInfos, setCandidateExtra, candidateApplyWithdraw, candidateWithdraw} = require ('./lib/candidateConstract');
+const { getCandidateList, GetCandidateDetails, candidateDeposit, GetVerifiersList,GetCandidateWithdrawInfos, setCandidateExtra, candidateApplyWithdraw, candidateWithdraw} = require ('./lib/candidateConstract');
 
 
 // const result = getCandidateList();
 
 // candidateDeposit()
 
-// candidateDetails()
+// GetCandidateDetails()
 
-// verifiersList()
-
-// candidateWithdrawInfos()
+GetVerifiersList()
 
 // setTimeout(() => {
 //     setCandidateExtra()
 
-    candidateApplyWithdraw()
+    // candidateApplyWithdraw()
 
 
 // }, 3500)
@@ -22,3 +20,6 @@ const { getCandidateList, candidateDetails, candidateDeposit, verifiersList, can
 // setTimeout(() => {
 //     candidateWithdraw();
 // }, 5000)
+
+
+GetCandidateWithdrawInfos()
