@@ -7,7 +7,7 @@ const { getCandidateList, GetCandidateDetails, candidateDeposit, GetVerifiersLis
 
 // GetCandidateDetails()
 
-GetVerifiersList()
+// GetVerifiersList()
 
 // setTimeout(() => {
 //     setCandidateExtra()
